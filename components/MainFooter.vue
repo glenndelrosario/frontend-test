@@ -62,12 +62,12 @@ export default {
 .main-footer-component-container {
   background: $background;
   font-size: 0.75rem;
-  height: 95px;
+  height: 5.9375rem;
   display: flex;
   align-items: center;
   justify-content: center;
   @media (min-width: 768px) {
-    height: 50px;
+    height: 3.125rem;
   }
   .list-inline-item:not(:last-child) {
     margin-right: 0 !important;

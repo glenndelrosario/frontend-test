@@ -6,11 +6,12 @@
           <input
             type="text"
             v-model="keyword"
+            class="form-input"
             placeholder="Enter name of show"
           />
           <span class="highlight"></span>
           <span class="underline"></span>
-          <label>Show Title</label>
+          <label class="label">Show Title</label>
         </div>
       </b-col>
       <b-col>
@@ -71,7 +72,7 @@
             </div>
             <div class="mb-0 card-text" v-html="result.show.summary"></div>
             <a :href="result.show.officialSite" target="_blank" class="text-decoration-none" v-show="result.show.officialSite">
-              <b-button block class="text-uppercase font-weight-bold bg-dark">Official Site</b-button>
+              <b-button block class="text-uppercase font-weight-light bg-dark">Official Site</b-button>
             </a>
           </div>
 

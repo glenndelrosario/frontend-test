@@ -3,23 +3,26 @@
     <p class="h5 text-center mb-5">Log in</p>
     <form>
       <div class="form-group mb-5">
-        <input type="email" /><span class="highlight"></span>
+        <input type="email" class="form-input" />
+        <span class="highlight"></span>
         <span class="underline"></span>
-        <label>Email Address</label>
+        <label class="label">Email Address</label>
       </div>
       <div class="form-group mb-2">
-        <input type="password" /><span class="highlight"></span>
+        <input type="password" class="form-input" />
+        <span class="highlight"></span>
         <span class="underline"></span>
-        <label>Password</label>
+        <label class="label">Password</label>
       </div>
       <div class="d-flex justify-content-between">
         <b-form-checkbox
           id="remember-me-input"
           name="remember-me-input"
           value="1"
-          class="mt-4"
         >
-          <span class="checkbox-text">Remember Me</span>
+          <label for="remember-me-input" class="checkbox-label">
+            Remember Me
+          </label>
         </b-form-checkbox>
         <a href="#" class="text-underline text-dark font-weight-light">
           Forgot Password?
