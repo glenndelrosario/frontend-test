@@ -1,0 +1,149 @@
+/** Global CSS **/
+
+html {  
+  font-family: 'Roboto', sans-serif !important;
+  height: 100vh;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Background Colors */
+.bg-blue {
+  background-color: $background;
+}
+.bg-gray {
+  background-color: $background-gray;
+}
+.bg-light-gray {
+  background-color: $background-light-gray;
+}
+.bg-gradient {
+  background-image: $background-gradient;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.form-group {
+  position: relative;
+}
+
+/* Input */
+input {
+  padding: 10px 10px 10px 5px;
+  -webkit-appearance: none;
+  display: block;
+  color: $text;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+input:focus {
+  outline: none;
+  border-bottom: none;
+}
+
+/* Label */
+label {
+  font-size: 0.75rem;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: -20px;
+  transition: all 0.2s ease;
+  color: $black;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.checkbox-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;  
+}
+
+/* Button */
+.button {
+  color: $white;
+  width: 100px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: $black;
+}
+
+/* Underline */
+.underline {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.underline:before,
+.underline:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $gray-dark;
+  transition: all 0.2s ease;
+}
+
+.underline:before {
+  left: 50%;
+}
+
+.underline:after {
+  right: 50%;
+}
+
+input:focus ~ .underline:before,
+input:focus ~ .underline:after {
+  width: 50%;
+}
+
+/* Highlight */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* Animations */
+@keyframes inputHighlighter {
+  from {
+    background: $gray-dark;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}

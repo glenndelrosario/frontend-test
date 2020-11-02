@@ -1,0 +1,33 @@
+.alternate-page-container {
+  min-height: 100vh;
+  background: $background-light-gray;
+  padding: 1em 5em;
+  .image {
+    left: 0;
+    top: 0;
+    position: relative;
+    overflow: hidden;
+    img {
+      -webkit-transition: 0.6s ease;
+      transition: 0.6s ease;
+      &:hover {
+        cursor: pointer;
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+      }
+    }
+  }
+  .rating {
+    color: $gray-light;
+    font-size: 1rem;   
+    font-weight: 500; 
+  }
+  .card-title {
+    color: $coral;
+    text-transform: uppercase;    
+    font-weight: bold;
+  }
+  .card-text {
+    color: $text;
+  }
+}

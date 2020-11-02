@@ -1,0 +1,41 @@
+.index-page-container {
+  height: 100vh;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  
+  &__top-navbar{
+    height: 50px;
+    background: $black;
+    @media (min-width: 768px) { 
+      background: $background;
+    }
+  }
+
+  &__left-panel {  
+    height: 100vh;  
+    background: url('/background.jpg') no-repeat;
+    background-size: cover;  
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+  }
+  
+  &__logo-text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    width: 80px;
+    height: 80px;    
+    background-color: $background;
+    border-radius: $radius-m;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;    
+  }
+
+}

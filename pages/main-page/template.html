@@ -1,0 +1,13 @@
+<section class="main-page-container">
+  <b-container class="p-4">
+      <b-row v-for="(result, index) in results" :key="index">
+        <b-col>
+          <main-list 
+            :title="result.show.name" 
+            :thumbnail="(result.show.image) ? result.show.image.medium : null" 
+            :summary="result.show.summary"
+          />
+        </b-col>
+      </b-row>    
+  </b-container>
+</section>

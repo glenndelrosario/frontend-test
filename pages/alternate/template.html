@@ -1,0 +1,82 @@
+<section class="alternate-page-container">
+  <b-container fluid>
+    <b-row class="mt-4">
+      <b-col>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            v-model="keyword"
+            placeholder="Enter name of show"
+          />
+          <span class="highlight"></span>
+          <span class="underline"></span>
+          <label>Show Title</label>
+        </div>
+      </b-col>
+      <b-col>
+        <b-button pill class="button bg-gradient" @click="searchShow">Search</b-button>
+      </b-col>
+    </b-row>
+  </b-container>
+  <!-- PRELOADER/SKELETON WRAPPER -->
+  <b-skeleton-wrapper :loading="isLoading">
+    <template #loading>
+      <div class="card-columns">
+        <template v-for="i in 4">
+          <b-card>
+            <b-skeleton-img no-aspect height="150px"></b-skeleton-img>
+            <b-skeleton width="75%" class="mx-auto my-3"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="80%"></b-skeleton>
+            <b-skeleton type="button" width="100%" class="mt-3"></b-skeleton>
+          </b-card>
+          <b-card>
+            <b-skeleton-img no-aspect height="250px"></b-skeleton-img>
+            <b-skeleton width="75%" class="mx-auto my-3"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="80%"></b-skeleton>
+            <b-skeleton type="button" width="100%" class="mt-3"></b-skeleton>
+          </b-card>
+          <b-card>
+            <b-skeleton-img no-aspect height="150px"></b-skeleton-img>
+            <b-skeleton width="75%" class="mx-auto my-3"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="100%"></b-skeleton>
+            <b-skeleton width="80%"></b-skeleton>
+            <b-skeleton type="button" width="100%" class="mt-3"></b-skeleton>
+          </b-card>
+        </template>
+      </div>
+    </template>
+
+    <div class="card-columns">
+      <template v-for="(result, index) in results">
+        <div class="card mb-5 p-2">
+          <div class="image">
+            <b-img-lazy v-bind="lazyImgProps" :src="getImageUrl(result.show.id)" :alt="result.show.name"></b-img-lazy>   
+          </div>
+
+          <div class="card-body">
+            <h5 class="card-title">{{ result.show.name }}</h5>
+            <div class="rating">
+              <b-icon icon="star-fill" variant="warning" font-scale="1"></b-icon>
+              {{ result.show.rating.average || '-' }}
+            </div>
+            <div class="badges my-2" v-if="result.show.genres.length > 0">
+              <template v-for="genre in result.show.genres">
+                <b-badge variant="secondary">{{ genre }}</b-badge>&nbsp;
+              </template>
+            </div>
+            <div class="mb-0 card-text" v-html="result.show.summary"></div>
+            <a :href="result.show.officialSite" target="_blank" class="text-decoration-none" v-show="result.show.officialSite">
+              <b-button block class="text-uppercase font-weight-bold bg-dark">Official Site</b-button>
+            </a>
+          </div>
+
+        </div>
+      </template>
+    </div>
+  </b-skeleton-wrapper>  
+</section>
