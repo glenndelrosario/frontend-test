@@ -1,5 +1,12 @@
 # frontend-test
 
+> A frontend developer test by Ekohe
+
+## Tech Used:
+- [NuxtJS](https://nuxtjs.org/)
+- [Bootstrap](https://bootstrap-vue.org/)
+- [TVmaze API](http://www.tvmaze.com/api)
+
 ## Build Setup
 
 ```bash
